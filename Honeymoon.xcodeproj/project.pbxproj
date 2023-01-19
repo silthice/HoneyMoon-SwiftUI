@@ -25,6 +25,9 @@
 		80C7360E2979431300E68222 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7360D2979431300E68222 /* InfoView.swift */; };
 		80C736102979438100E68222 /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7360F2979438100E68222 /* TitleModifier.swift */; };
 		80C736122979444600E68222 /* ButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C736112979444600E68222 /* ButtonModifier.swift */; };
+		80C736142979516300E68222 /* SymbolModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C736132979516300E68222 /* SymbolModifier.swift */; };
+		80C736162979541700E68222 /* CardTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C736152979541700E68222 /* CardTransition.swift */; };
+		80C736182979557000E68222 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C736172979557000E68222 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		80C7360D2979431300E68222 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		80C7360F2979438100E68222 /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
 		80C736112979444600E68222 /* ButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModifier.swift; sourceTree = "<group>"; };
+		80C736132979516300E68222 /* SymbolModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolModifier.swift; sourceTree = "<group>"; };
+		80C736152979541700E68222 /* CardTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTransition.swift; sourceTree = "<group>"; };
+		80C736172979557000E68222 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 		80C735F9297928FB00E68222 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				80C736152979541700E68222 /* CardTransition.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 		80C735FA2979290000E68222 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				80C736172979557000E68222 /* Constant.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			children = (
 				80C7360F2979438100E68222 /* TitleModifier.swift */,
 				80C736112979444600E68222 /* ButtonModifier.swift */,
+				80C736132979516300E68222 /* SymbolModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 				80C735FF29792F9300E68222 /* HoneymoonData.swift in Sources */,
 				80C7360E2979431300E68222 /* InfoView.swift in Sources */,
 				80C7360529793A3200E68222 /* FooterView.swift in Sources */,
+				80C736182979557000E68222 /* Constant.swift in Sources */,
 				80C736102979438100E68222 /* TitleModifier.swift in Sources */,
+				80C736162979541700E68222 /* CardTransition.swift in Sources */,
+				80C736142979516300E68222 /* SymbolModifier.swift in Sources */,
 				80C736032979386000E68222 /* HeaderView.swift in Sources */,
 				80C735FD29792F5200E68222 /* HoneymoonModel.swift in Sources */,
 				80C736122979444600E68222 /* ButtonModifier.swift in Sources */,

@@ -13,9 +13,13 @@ struct ContentView: View {
     @State var showGuide: Bool = false
     @State var showInfo: Bool = false
     @GestureState private var dragState = DragState.inactive
+    private let dragAreaThreshold: CGFloat = 65
+    //Since Card limited to 2 cards, hence index of last card will be 1
+    @State private var lastCardIndex: Int = 1
+    @State private var cardRemovalTransition = AnyTransition.trailingBottom
     
     //MARK: - CARD VIEWS
-    var cardViews: [CardView] = {
+    @State var cardViews: [CardView] = {
         var views = [CardView]()
         //Optimize to 2 cards only instead whole array of card views
         for index in 0..<2 {
@@ -30,6 +34,22 @@ struct ContentView: View {
             return false
         }
         return index == 0
+    }
+    
+    //MARK: - MOVE CARD
+    private func moveCards() {
+        cardViews.removeFirst()
+        
+        //to increase last card index for showing next card
+        lastCardIndex += 1
+        
+        let honeymoon = honeymoonData[lastCardIndex % honeymoonData.count]
+        
+        let newCardView = CardView(honeyMoon: honeymoon)
+        
+        //to push new added card to the 2 images as next card
+        cardViews.append(newCardView)
+        
     }
     
     
@@ -81,6 +101,19 @@ struct ContentView: View {
                 ForEach(cardViews) { cardView in
                     cardView
                         .zIndex(isTopCard(cardView: cardView) ? 1 : 0)
+                        .overlay(
+                            ZStack {
+                                //XMARK SYMBOL
+                                Image(systemName: "x.circle")
+                                    .modifier(SymbolModifier())
+                                    .opacity(dragState.translation.width < -dragAreaThreshold && isTopCard(cardView: cardView) ? 1 : 0)
+                                
+                                //HEART SYMBOL
+                                Image(systemName: "heart.circle")
+                                    .modifier(SymbolModifier())
+                                    .opacity(dragState.translation.width > dragAreaThreshold && isTopCard(cardView: cardView) ? 1 : 0)
+                            }
+                        )
                         .offset(x: isTopCard(cardView: cardView) ? dragState.translation.width : 0, y: isTopCard(cardView: cardView) ? dragState.translation.height : 0)
                         .scaleEffect(dragState.isDragging && isTopCard(cardView: cardView) ? 0.85 : 1)
                         .rotationEffect(Angle(degrees: isTopCard(cardView: cardView) ? Double(dragState.translation.width / 12 ) : 0 ))
@@ -98,7 +131,32 @@ struct ContentView: View {
                                         break
                                     }
                                 })
-                        )
+                                .onChanged({ (value) in
+                                    guard case .second(true, let drag?) = value else {
+                                        return
+                                    }
+                                    
+                                    if drag.translation.width < -dragAreaThreshold {
+                                        cardRemovalTransition = .leadingBottom
+                                    }
+                                    
+                                    if drag.translation.width > dragAreaThreshold {
+                                        cardRemovalTransition = .trailingBottom
+                                    }
+                                })
+                                .onEnded({ (value) in
+                                    guard case .second(true, let drag?) = value else {
+                                        return
+                                    }
+                                    
+                                    if drag.translation.width < -dragAreaThreshold || drag.translation.width > dragAreaThreshold {
+                                        playSound(sound: "sound-rise")
+                                        hapticFeedback.notificationOccurred(.success)
+                                        moveCards()
+                                    }
+                                })
+                        ) //: End of Gesture
+                        .transition(cardRemovalTransition)
                 }
             }
             .padding(.horizontal)

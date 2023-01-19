@@ -21,6 +21,8 @@ struct FooterView: View {
             
             Button(action: {
                 showBookingAlert.toggle()
+                playSound(sound: "sound-click")
+                hapticFeedback.notificationOccurred(.success)
             }, label: {
                 Text("Book Destination".uppercased())
                     .font(.system(.subheadline, design: .rounded))
