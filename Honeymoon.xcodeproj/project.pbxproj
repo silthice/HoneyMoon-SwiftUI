@@ -12,8 +12,8 @@
 		80C735D62979251200E68222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C735D52979251200E68222 /* Assets.xcassets */; };
 		80C735D92979251200E68222 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C735D82979251200E68222 /* Preview Assets.xcassets */; };
 		80C735E62979263500E68222 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80C735E52979263500E68222 /* Launch Screen.storyboard */; };
-		80C735EF297926DF00E68222 /* sound-click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 80C735EC297926DC00E68222 /* sound-click.mp3 */; };
-		80C735F0297926E100E68222 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 80C735EB297926DC00E68222 /* sound-rise.mp3 */; };
+		80C735F7297928C900E68222 /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 80C735F5297928C900E68222 /* sound-rise.mp3 */; };
+		80C735F8297928C900E68222 /* sound-click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 80C735F6297928C900E68222 /* sound-click.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +23,8 @@
 		80C735D52979251200E68222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80C735D82979251200E68222 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80C735E52979263500E68222 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		80C735EB297926DC00E68222 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sound-rise.mp3"; path = "../../../../Completed/Honeymoon iOS 16/Honeymoon/Sound/sound-rise.mp3"; sourceTree = "<group>"; };
-		80C735EC297926DC00E68222 /* sound-click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "sound-click.mp3"; path = "../../../../Completed/Honeymoon iOS 16/Honeymoon/Sound/sound-click.mp3"; sourceTree = "<group>"; };
+		80C735F5297928C900E68222 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
+		80C735F6297928C900E68222 /* sound-click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-click.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +135,8 @@
 		80C735E9297926A000E68222 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				80C735EC297926DC00E68222 /* sound-click.mp3 */,
-				80C735EB297926DC00E68222 /* sound-rise.mp3 */,
+				80C735F6297928C900E68222 /* sound-click.mp3 */,
+				80C735F5297928C900E68222 /* sound-rise.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C735F0297926E100E68222 /* sound-rise.mp3 in Resources */,
-				80C735EF297926DF00E68222 /* sound-click.mp3 in Resources */,
+				80C735F8297928C900E68222 /* sound-click.mp3 in Resources */,
 				80C735E62979263500E68222 /* Launch Screen.storyboard in Resources */,
+				80C735F7297928C900E68222 /* sound-rise.mp3 in Resources */,
 				80C735D92979251200E68222 /* Preview Assets.xcassets in Resources */,
 				80C735D62979251200E68222 /* Assets.xcassets in Resources */,
 			);
