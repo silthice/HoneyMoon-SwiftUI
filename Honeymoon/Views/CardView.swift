@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CardView: View {
+struct CardView: View, Identifiable {
     //MARK: - PROPERTIES
     var honeyMoon: Destination
     let id = UUID()
